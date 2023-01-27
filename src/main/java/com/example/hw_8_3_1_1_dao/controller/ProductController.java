@@ -16,7 +16,7 @@ public class ProductController {
     public ProductController (ProductService service){
         this.service = service;
     }
-    @GetMapping("/product-name")
+    @GetMapping("/fetch-product")
     public List<String> getProductName (@RequestParam("name") String customerName){
         return service.getProductName(customerName);
     }
