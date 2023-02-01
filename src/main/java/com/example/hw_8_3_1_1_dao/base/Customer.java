@@ -1,10 +1,19 @@
 package com.example.hw_8_3_1_1_dao.base;
-/*id integer auto_increment primary key,
-                             name char(254),
-                             surname char(254),
-                             age integer,
-                             phone_number char(10)*/
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.Builder;
+import lombok.Data;
+import lombok.Generated;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@Entity
+@Builder
 public class Customer {
+    @Id
+    @Generated
     private int id;
     private String name;
     private String surname;
@@ -17,25 +26,5 @@ public class Customer {
         this.name = name;
         this.surname = surname;
         this.phone_number = phone_number;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getPhone_number() {
-        return phone_number;
-    }
-
-    public String getSurname() {
-        return surname;
     }
 }
